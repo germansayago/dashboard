@@ -1,0 +1,17 @@
+body{
+    background-color: orange;
+    text-align: center;
+    font-family: 'Helvetica', serif;
+}
+
+.btn{
+    color: white;
+    background-color: orange;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+
+    &-danger{
+        background-color: red;
+    }
+}
