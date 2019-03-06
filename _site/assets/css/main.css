@@ -1,0 +1,15 @@
+body {
+  background-color: green;
+  text-align: center;
+  font-family: 'Helvetica', serif; }
+
+.btn {
+  color: white;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none; }
+  .btn-danger {
+    background-color: red; }
+  .btn-info {
+    background-color: blue; }

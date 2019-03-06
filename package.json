@@ -12,14 +12,18 @@
     "autoprefixer": "^9.4.9",
     "browser-sync": "^2.26.3",
     "cssnano": "^4.1.10",
+    "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-newer": "^1.4.0",
     "gulp-nunjucks-render": "^2.2.2",
+    "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.1"
+    "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
     "nunjucks": "^3.1.7"

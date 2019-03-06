@@ -1,93 +1,122 @@
-// ## pluggins
+"use strict";
+
+// Load plugins
 var gulp = require("gulp"),
     sass = require("gulp-sass"),
     postcss = require("gulp-postcss"),
+    rename = require("gulp-rename"),
     autoprefixer = require("autoprefixer"),
     cssnano = require("cssnano"),
-    sourcemaps = require("gulp-sourcemaps");
-    render = require('gulp-nunjucks-render');
-    browserSync = require("browser-sync").create();
+    uglify = require("gulp-uglify"),
+    imagemin = require("gulp-imagemin"),
+    newer = require("gulp-newer"),
+    plumber = require("gulp-plumber"),
+    sourcemaps = require("gulp-sourcemaps"),
+    render = require('gulp-nunjucks-render'),
+    del = require("del"),
+    browsersync = require("browser-sync").create();
 
-// ## define paths sources & destine
-var paths = {
-  styles: {
-      src: 'src/scss/**/*.scss',
-      dest: 'src/css'
-  }
-  ,html: {
-   src: 'src/*.html',
-   dest: 'dist/'
-  }
-  ,nunjucks: {
-   pages: 'src/pages/**/*.njk',
-   templates: 'src/templates',
-   dest: 'src'
-  }
-  ,css: {
-    src: 'src/css/*.css',
-    dest: 'dist/css'
-  }
-  ,scripts: {
-    src: 'src/js/*.js',
-    dest: 'dist/js'
-  }  
-  ,images: {
-    src: 'src/images/.*jpg|gif|png',
-    dest: 'dist/images'
-  }
-};
+// BrowserSync
+function browserSync() {
+    browsersync.init({
+        server: {
+            baseDir: "./_site/"
+        },
+        port: 3000
+    });
+}
 
-// ## styles scss/sass
-function style() {
+// BrowserSync Reaload
+function browserSyncReload() {
+    browsersync.reload();
+}
+
+// Clean dist
+function clean() {
+    return del(["./_site/assets"])
+}
+
+// Optimize Images
+function images() {
+    return gulp
+      .src("./assets/images/**/*")
+      .pipe(newer("./_site/assets/images"))
+      .pipe(
+        imagemin([
+            imagemin.gifsicle({ interlaced: true }),
+            imagemin.jpegtran({ progressive: true }),
+            imagemin.optipng({ optimizationLevel: 5 }),
+            imagemin.svgo({
+                plugins: [
+                    {
+                        removeViewBox: false,
+                        collapseGroups: true
+                    }
+                ]
+            })
+        ])
+    )
+    .pipe(gulp.dest("./_site/assets/images"));
+}
+
+// Styles sass/scss
+function styles() {
   return gulp
-    .src(paths.styles.src)
+    .src('./assets/scss/**/*.scss')
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass())
+    .pipe(gulp.dest('./_site/assets/css/'))
+    .pipe(rename({ suffix: ".min" }))
     .on("error", sass.logError)
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.styles.dest))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('./_site/assets/css/'))
+    .pipe(browsersync.stream())
 }
 
-// ## reaload
-function reload() {
-  browserSync.reload();
+function scripts(){
+    return gulp
+        .src(["./assets/js/*.js"])
+        .pipe(plumber())
+        .pipe(uglify())
+        .pipe(gulp.dest('./_site/assets/js/'))
+        .pipe(browsersync.stream())
 }
 
+// Template engine nunjuks/njk
 function nunjucks() {
-  return gulp
-    .src(paths.nunjucks.pages)
-    .pipe(render({
-      path: [paths.nunjucks.templates]
-    }))
-    .pipe(gulp.dest(paths.nunjucks.dest))
-    .pipe(browserSync.stream());
+    return gulp
+        .src("./assets/pages/*.njk")
+        .pipe(plumber())
+        .pipe(render({
+            path: ["./assets/templates"]
+        }))
+        .pipe(gulp.dest("./_site/"))
+        .pipe(browsersync.stream())
 }
 
-// ## watch 
-function watch(){
-  
-  browserSync.init({
-    server: {
-      baseDir: './src/'
-    }
-  })
-
-  gulp.watch(paths.styles.src, style);
-  gulp.watch(paths.nunjucks.pages, nunjucks);
-  gulp.watch(paths.nunjucks.templates, nunjucks);
-  gulp.watch(paths.html.src).on('change', reload);
-
+// Watch files
+function watchFiles() {
+  gulp.watch("./assets/scss/**/*.scss", styles); // css
+  gulp.watch("./assets/js/*.js", scripts); // js
+  gulp.watch("./assets/pages/**/*.njk", nunjucks); // pages njk
+  gulp.watch("./assets/templates/**/*.njk", nunjucks); // templates njk
+  gulp.watch("./assets/images/**/*", images); // images
+  gulp.watch("./_site/*.html").on('change', browserSyncReload); // html
 }
 
-function build() {
-  return gulp
-    .src(paths.css.src)
-    .pipe(gulp.dest(paths.css.dest))
-}
 
-exports.watch = watch
-exports.build = build
+// Define complex tasks
+const build = gulp.series(clean, gulp.parallel(styles, scripts, images))
+const watch = gulp.parallel(watchFiles, browserSync)
 
-exports.nunjucks = nunjucks
+// Export tasks
+exports.images = images;
+exports.styles = styles;
+exports.scripts = scripts;
+exports.nunjucks = nunjucks;
+exports.watch = watch;
+exports.build = build;
+exports.clean = clean;
+exports.default = build;
