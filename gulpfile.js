@@ -75,6 +75,7 @@ function styles() {
     .pipe(browsersync.stream())
 }
 
+// Scripts js
 function scripts(){
     return gulp
         .src(["./assets/js/*.js"])
@@ -96,6 +97,25 @@ function nunjucks() {
         .pipe(browsersync.stream())
 }
 
+function js() {
+    return gulp
+        .src([
+            './node_modules/bootstrap/dist/js/bootstrap.min.js',
+            './node_modules/jquery/dist/jquery.min.js',
+            './node_modules/popper.js/dist/umd/popper.min.js',
+            './node_modules/wow.js/dist/wow.min.js',
+        ])
+        .pipe(gulp.dest('./dist/assets/js/'))
+}
+
+function css() {
+    return gulp
+        .src([
+            './node_modules/animate.css/animate.min.css',
+        ])
+        .pipe(gulp.dest('./dist/assets/css/'))
+}
+
 // Watch files
 function watchFiles() {
   gulp.watch("./assets/scss/**/*.scss", styles); // css
@@ -107,7 +127,7 @@ function watchFiles() {
 }
 
 // Define complex tasks
-const build = gulp.series(clean, gulp.parallel(nunjucks, styles, scripts, images))
+const build = gulp.series(clean, gulp.parallel(css, js, nunjucks, styles, scripts, images))
 const watch = gulp.parallel(watchFiles, browserSync)
 
 // Export tasks
@@ -118,4 +138,5 @@ exports.nunjucks = nunjucks;
 exports.watch = watch;
 exports.build = build;
 exports.clean = clean;
+
 exports.default = build;
