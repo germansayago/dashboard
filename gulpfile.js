@@ -20,7 +20,7 @@ var gulp = require("gulp"),
 function browserSync() {
     browsersync.init({
         server: {
-            baseDir: "./_site/"
+            baseDir: "./dist/"
         },
         port: 3000
     });
@@ -33,14 +33,14 @@ function browserSyncReload() {
 
 // Clean dist
 function clean() {
-    return del(["./_site/assets"])
+    return del(["./dist"])
 }
 
 // Optimize Images
 function images() {
     return gulp
       .src("./assets/images/**/*")
-      .pipe(newer("./_site/assets/images"))
+      .pipe(newer("./dist/assets/images"))
       .pipe(
         imagemin([
             imagemin.gifsicle({ interlaced: true }),
@@ -56,7 +56,7 @@ function images() {
             })
         ])
     )
-    .pipe(gulp.dest("./_site/assets/images"));
+    .pipe(gulp.dest("./dist/assets/images"));
 }
 
 // Styles sass/scss
@@ -66,12 +66,12 @@ function styles() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(gulp.dest('./_site/assets/css/'))
+    .pipe(gulp.dest('./dist/assets/css/'))
     .pipe(rename({ suffix: ".min" }))
     .on("error", sass.logError)
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./_site/assets/css/'))
+    .pipe(gulp.dest('./dist/assets/css/'))
     .pipe(browsersync.stream())
 }
 
@@ -80,7 +80,7 @@ function scripts(){
         .src(["./assets/js/*.js"])
         .pipe(plumber())
         .pipe(uglify())
-        .pipe(gulp.dest('./_site/assets/js/'))
+        .pipe(gulp.dest('./dist/assets/js/'))
         .pipe(browsersync.stream())
 }
 
@@ -92,7 +92,7 @@ function nunjucks() {
         .pipe(render({
             path: ["./assets/templates"]
         }))
-        .pipe(gulp.dest("./_site/"))
+        .pipe(gulp.dest("./dist/"))
         .pipe(browsersync.stream())
 }
 
@@ -103,12 +103,11 @@ function watchFiles() {
   gulp.watch("./assets/pages/**/*.njk", nunjucks); // pages njk
   gulp.watch("./assets/templates/**/*.njk", nunjucks); // templates njk
   gulp.watch("./assets/images/**/*", images); // images
-  gulp.watch("./_site/*.html").on('change', browserSyncReload); // html
+  gulp.watch("./dist/*.html").on('change', browserSyncReload); // html
 }
 
-
 // Define complex tasks
-const build = gulp.series(clean, gulp.parallel(styles, scripts, images))
+const build = gulp.series(clean, gulp.parallel(nunjucks, styles, scripts, images))
 const watch = gulp.parallel(watchFiles, browserSync)
 
 // Export tasks
