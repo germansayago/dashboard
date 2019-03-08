@@ -20,7 +20,7 @@ var gulp = require("gulp"),
 function browserSync() {
     browsersync.init({
         server: {
-            baseDir: "./dist/"
+            baseDir: "./public/"
         },
         port: 3000
     });
@@ -31,16 +31,16 @@ function browserSyncReload() {
     browsersync.reload();
 }
 
-// Clean dist
+// Clean public
 function clean() {
-    return del(["./dist"])
+    return del(["./public"])
 }
 
 // Optimize Images
 function images() {
     return gulp
-      .src("./assets/images/**/*")
-      .pipe(newer("./dist/assets/images"))
+      .src("./resources/images/**/*")
+      .pipe(newer("./public/images"))
       .pipe(
         imagemin([
             imagemin.gifsicle({ interlaced: true }),
@@ -56,44 +56,44 @@ function images() {
             })
         ])
     )
-    .pipe(gulp.dest("./dist/assets/images"));
+    .pipe(gulp.dest("./public/images"));
 }
 
 // Styles sass/scss
 function styles() {
   return gulp
-    .src('./assets/scss/**/*.scss')
+    .src('./resources/scss/**/*.scss')
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(gulp.dest('./dist/assets/css/'))
+    .pipe(gulp.dest('./public/css/'))
     .pipe(rename({ suffix: ".min" }))
     .on("error", sass.logError)
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/assets/css/'))
+    .pipe(gulp.dest('./public/css/'))
     .pipe(browsersync.stream())
 }
 
 // Scripts js
 function scripts(){
     return gulp
-        .src(["./assets/js/*.js"])
+        .src(["./resources/js/*.js"])
         .pipe(plumber())
         .pipe(uglify())
-        .pipe(gulp.dest('./dist/assets/js/'))
+        .pipe(gulp.dest('./public/js/'))
         .pipe(browsersync.stream())
 }
 
 // Template engine nunjuks/njk
 function nunjucks() {
     return gulp
-        .src("./assets/pages/*.njk")
+        .src("./resources/pages/*.njk")
         .pipe(plumber())
         .pipe(render({
-            path: ["./assets/templates"]
+            path: ["./resources/templates"]
         }))
-        .pipe(gulp.dest("./dist/"))
+        .pipe(gulp.dest("./public/"))
         .pipe(browsersync.stream())
 }
 
@@ -105,7 +105,7 @@ function js() {
             './node_modules/popper.js/dist/umd/popper.min.js',
             './node_modules/wow.js/dist/wow.min.js',
         ])
-        .pipe(gulp.dest('./dist/assets/js/'))
+        .pipe(gulp.dest('./public/js/'))
 }
 
 function css() {
@@ -113,17 +113,17 @@ function css() {
         .src([
             './node_modules/animate.css/animate.min.css',
         ])
-        .pipe(gulp.dest('./dist/assets/css/'))
+        .pipe(gulp.dest('./public/css/'))
 }
 
 // Watch files
 function watchFiles() {
-  gulp.watch("./assets/scss/**/*.scss", styles); // css
-  gulp.watch("./assets/js/*.js", scripts); // js
-  gulp.watch("./assets/pages/**/*.njk", nunjucks); // pages njk
-  gulp.watch("./assets/templates/**/*.njk", nunjucks); // templates njk
-  gulp.watch("./assets/images/**/*", images); // images
-  gulp.watch("./dist/*.html").on('change', browserSyncReload); // html
+  gulp.watch("./resources/scss/**/*.scss", styles); // css
+  gulp.watch("./resources/js/*.js", scripts); // js
+  gulp.watch("./resources/pages/**/*.njk", nunjucks); // pages njk
+  gulp.watch("./resources/templates/**/*.njk", nunjucks); // templates njk
+  gulp.watch("./resources/images/**/*", images); // images
+  gulp.watch("./public/*.html").on('change', browserSyncReload); // html
 }
 
 // Define complex tasks
@@ -139,4 +139,5 @@ exports.watch = watch;
 exports.build = build;
 exports.clean = clean;
 
+// Export default
 exports.default = build;
