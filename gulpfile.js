@@ -26,7 +26,7 @@ function browserSync() {
     });
 }
 
-// BrowserSync Reaload
+// BrowserSync Reload
 function browserSyncReload() {
     browsersync.reload();
 }
