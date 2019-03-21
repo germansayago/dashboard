@@ -11,13 +11,17 @@
 </head>
 <body>
 
-    {% include "navbar.njk" %}
+    <div class="d-flex wrapper" id="wrapper">
+        
+        {% include "components/sidebar.njk" %}
 
-    <div class="container py-5">
-        {% block content %}{% endblock %}
+        <div id="page-content-wrapper">
+            {% include "components/navbar.njk" %}
+            {% include "components/content.njk" %}
+            {% include "components/footer.njk" %}                
+        </div>
+
     </div>
-
-    {% include "footer.njk" %}
 
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
