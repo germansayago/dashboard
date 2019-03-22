@@ -1,4 +1,7 @@
-html{}
+html{
+    position: relative;
+    min-height: 100%;
+}
 
 body {
     overflow-x: hidden;

@@ -1,12 +1,22 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light border-bottom">
+<nav class="navbar sticky-top navbar-expand-md navbar-primary bg-light">
 
-    <button class="btn btn-primary" id="menu-toggle">
-        <i class="fas fa-bars"></i>
-    </button>
+    <div class="hamburger" id="sidebar-toggle">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="d-block d-md-none">
+        <a href="./">
+            <span class="menu-text">DASHBOARD</span>
+        </a>   
+    </div>
+
+    <div class="navbar-toggler hamburger" id="navbar-toggle" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">

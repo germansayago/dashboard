@@ -15,10 +15,14 @@
         
         {% include "components/sidebar.njk" %}
 
-        <div id="page-content-wrapper">
+        <div class="page-content-wrapper mb-5" id="page-content-wrapper">
+
             {% include "components/navbar.njk" %}
-            {% include "components/content.njk" %}
-            {% include "components/footer.njk" %}                
+
+            <div class="container-fluid">
+            {% block content %}{% endblock %}            
+            </div>
+                        
         </div>
 
     </div>

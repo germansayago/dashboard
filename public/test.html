@@ -13,44 +13,105 @@
 
     <div class="d-flex wrapper" id="wrapper">
         
-        <div class="bg-light border-right sidebar" id="sidebar">    
-    <div class="sticky-top">        
-        
-        <div class="sidebar-heading">
-            <a href="./">Start Bootstrap</a>
+        <div class="sidebar" id="sidebar">
+    <div class="sticky-top">
+
+        <div class="sidebar-heading mb-3">
+            <a href="./">
+                <span class="menu-text">DASHBOARD</span>
+            </a>
         </div>
-        
-        <ul class="list-unstyled sidebar-menu">
-            <li  class="active">
-                <a href="">Static</a>
-            </li>
-            <li>
-                <a href="">Static</a>
-            </li>
-            <li>
-                <a class="dropdown-toggle" data-toggle="collapse" href="#homeSubmenu" role="button" aria-expanded="false" aria-controls="homeSubmenu">
-                    Dropdown
+
+        <div class="sidebar-menu mb-3">
+            
+            <div class="sidebar-item">
+                <a class="sidebar-link" data-toggle="collapse" href="#homeSubmenu1" role="button" aria-expanded="false" aria-controls="homeSubmenu1">
+                    <div>
+                        <i class="fas fa-fw fa-lg fa-users sidebar-icon"></i>
+                        <span class="sidebar-text">Users</span>
+                    </div>
+                    <div class="sidebar-caret"><i class="fas fa-angle-right"></i></div>
                 </a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li><a href="http://" target="_blank" rel="noopener noreferrer">home 1</a></li>
-                    <li><a href="http://" target="_blank" rel="noopener noreferrer">home 2</a></li>
-                    <li><a href="http://" target="_blank" rel="noopener noreferrer">home 3</a></li>
-                </ul>
-            </li>
-        <ul>  
+                <div class="collapse sidebar-collapse" id="homeSubmenu1">
+                    <a href="" class="sidebar-link">• link</a>
+                    <a href="" class="sidebar-link">• link</a>
+                    <a href="" class="sidebar-link">• link</a>
+                </div>
+            </div> 
+
+            <div class="sidebar-item">
+                <a class="sidebar-link" data-toggle="collapse" href="#homeSubmenu2" role="button" aria-expanded="false" aria-controls="homeSubmenu2">
+                    <div>
+                        <i class="fas fa-fw fa-lg fa-shopping-bag sidebar-icon"></i>
+                        <span class="sidebar-text">Products</span>
+                    </div>
+                    <div class="sidebar-caret"><i class="fas fa-angle-right"></i></div>
+                </a>
+                <div class="collapse sidebar-collapse" id="homeSubmenu2">
+                    <a href="" class="sidebar-link">• link</a>
+                    <a href="" class="sidebar-link">• link</a>
+                    <a href="" class="sidebar-link">• link</a>
+                </div>
+            </div>
+            
+            <div class="sidebar-item">
+                <a class="sidebar-link" data-toggle="collapse" href="#homeSubmenu3" role="button" aria-expanded="false" aria-controls="homeSubmenu3">
+                    <div>
+                        <i class="fas fa-fw fa-lg fa-feather-alt  sidebar-icon"></i>
+                        <span class="sidebar-text">Posts</span>
+                    </div>
+                    <div class="sidebar-caret"><i class="fas fa-angle-right"></i></div>
+                </a>
+                <div class="collapse sidebar-collapse" id="homeSubmenu3">
+                    <a href="" class="sidebar-link">link</a>
+                    <a href="" class="sidebar-link">link</a>
+                    <a href="" class="sidebar-link">link</a>
+                </div>
+            </div> 
+
+             <div class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <div>
+                        <i class="fas fa-fw fa-lg fa-cog sidebar-icon"></i>
+                        <span class="sidebar-text">Static link</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="sidebar-banner mb-3">
+            banner
+        </div>
+
+        <div class="sidebar-banner">
+            banner
+        </div>
+
     </div>
 </div>
 
-        <div id="page-content-wrapper">
-            <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="page-content-wrapper mb-5" id="page-content-wrapper">
 
-    <button class="btn btn-primary" id="menu-toggle">
-        <i class="fas fa-bars"></i>
-    </button>
+            <nav class="navbar sticky-top navbar-expand-md navbar-primary bg-light">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="hamburger" id="sidebar-toggle">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
+
+    <div class="d-block d-md-none">
+        <a href="./">
+            <span class="menu-text">DASHBOARD</span>
+        </a>   
+    </div>
+
+    <div class="navbar-toggler hamburger" id="navbar-toggle" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
@@ -74,15 +135,11 @@
         </ul>
     </div>
 </nav>
-            <div class="container-fluid py-3 px-5">
-    <h1 class="mt-4">Simple Sidebar</h1>
-    <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-    <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
-    
-</div>
-            <footer class="footer">
-    <span class="text-muted">Place sticky footer content here.</span>
-</footer>                
+
+            <div class="container-fluid">
+                        
+            </div>
+                        
         </div>
 
     </div>

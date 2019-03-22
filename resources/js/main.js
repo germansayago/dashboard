@@ -1,9 +1,12 @@
 $(document).ready(function(){
     
-    $("#menu-toggle").click(function(e) {
+    $("#sidebar-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
-      });
+    });
 
+    $(".hamburger").click(function(){
+        $(this).toggleClass("is-active");
+    });
     
 });  

@@ -1,27 +1,77 @@
-<div class="bg-light border-right sidebar" id="sidebar">    
-    <div class="sticky-top">        
-        
-        <div class="sidebar-heading">
-            <a href="./">Start Bootstrap</a>
+<div class="sidebar" id="sidebar">
+    <div class="sticky-top">
+
+        <div class="sidebar-heading mb-3">
+            <a href="./">
+                <span class="menu-text">DASHBOARD</span>
+            </a>
         </div>
-        
-        <ul class="list-unstyled sidebar-menu">
-            <li  class="active">
-                <a href="">Static</a>
-            </li>
-            <li>
-                <a href="">Static</a>
-            </li>
-            <li>
-                <a class="dropdown-toggle" data-toggle="collapse" href="#homeSubmenu" role="button" aria-expanded="false" aria-controls="homeSubmenu">
-                    Dropdown
+
+        <div class="sidebar-menu mb-3">
+            
+            <div class="sidebar-item">
+                <a class="sidebar-link" data-toggle="collapse" href="#homeSubmenu1" role="button" aria-expanded="false" aria-controls="homeSubmenu1">
+                    <div>
+                        <i class="fas fa-fw fa-lg fa-users sidebar-icon"></i>
+                        <span class="sidebar-text">Users</span>
+                    </div>
+                    <div class="sidebar-caret"><i class="fas fa-angle-right"></i></div>
                 </a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li><a href="http://" target="_blank" rel="noopener noreferrer">home 1</a></li>
-                    <li><a href="http://" target="_blank" rel="noopener noreferrer">home 2</a></li>
-                    <li><a href="http://" target="_blank" rel="noopener noreferrer">home 3</a></li>
-                </ul>
-            </li>
-        <ul>  
+                <div class="collapse sidebar-collapse" id="homeSubmenu1">
+                    <a href="" class="sidebar-link">• link</a>
+                    <a href="" class="sidebar-link">• link</a>
+                    <a href="" class="sidebar-link">• link</a>
+                </div>
+            </div> 
+
+            <div class="sidebar-item">
+                <a class="sidebar-link" data-toggle="collapse" href="#homeSubmenu2" role="button" aria-expanded="false" aria-controls="homeSubmenu2">
+                    <div>
+                        <i class="fas fa-fw fa-lg fa-shopping-bag sidebar-icon"></i>
+                        <span class="sidebar-text">Products</span>
+                    </div>
+                    <div class="sidebar-caret"><i class="fas fa-angle-right"></i></div>
+                </a>
+                <div class="collapse sidebar-collapse" id="homeSubmenu2">
+                    <a href="" class="sidebar-link">• link</a>
+                    <a href="" class="sidebar-link">• link</a>
+                    <a href="" class="sidebar-link">• link</a>
+                </div>
+            </div>
+            
+            <div class="sidebar-item">
+                <a class="sidebar-link" data-toggle="collapse" href="#homeSubmenu3" role="button" aria-expanded="false" aria-controls="homeSubmenu3">
+                    <div>
+                        <i class="fas fa-fw fa-lg fa-feather-alt  sidebar-icon"></i>
+                        <span class="sidebar-text">Posts</span>
+                    </div>
+                    <div class="sidebar-caret"><i class="fas fa-angle-right"></i></div>
+                </a>
+                <div class="collapse sidebar-collapse" id="homeSubmenu3">
+                    <a href="" class="sidebar-link">link</a>
+                    <a href="" class="sidebar-link">link</a>
+                    <a href="" class="sidebar-link">link</a>
+                </div>
+            </div> 
+
+             <div class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <div>
+                        <i class="fas fa-fw fa-lg fa-cog sidebar-icon"></i>
+                        <span class="sidebar-text">Static link</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="sidebar-banner mb-3">
+            banner
+        </div>
+
+        <div class="sidebar-banner">
+            banner
+        </div>
+
     </div>
 </div>
