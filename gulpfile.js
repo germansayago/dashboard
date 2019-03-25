@@ -20,7 +20,7 @@ var gulp = require("gulp"),
 function browserSync() {
     browsersync.init({
         server: {
-            baseDir: "./public/"
+            baseDir: "public/"
         },
         port: 3000
     });
@@ -33,14 +33,14 @@ function browserSyncReload() {
 
 // Clean public
 function clean() {
-    return del(["./public"])
+    return del(["public"])
 }
 
 // Optimize Images
 function images() {
     return gulp
-      .src("./resources/images/**/*")
-      .pipe(newer("./public/images"))
+      .src("resources/images/**/*")
+      .pipe(newer("public/images"))
       .pipe(
         imagemin([
             imagemin.gifsicle({ interlaced: true }),
@@ -56,74 +56,74 @@ function images() {
             })
         ])
     )
-    .pipe(gulp.dest("./public/images"));
+    .pipe(gulp.dest("public/images"));
 }
 
 // Styles sass/scss
 function styles() {
   return gulp
-    .src('./resources/scss/**/*.scss')
+    .src('resources/scss/**/*.scss')
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(gulp.dest('./public/css/'))
+    .pipe(gulp.dest('public/css/'))
     .pipe(rename({ suffix: ".min" }))
     .on("error", sass.logError)
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./public/css/'))
+    .pipe(gulp.dest('public/css/'))
     .pipe(browsersync.stream())
 }
 
 // Scripts js
 function scripts(){
     return gulp
-        .src(["./resources/js/*.js"])
+        .src(["resources/js/*.js"])
         .pipe(plumber())
         .pipe(uglify())
-        .pipe(gulp.dest('./public/js/'))
+        .pipe(gulp.dest('public/js/'))
         .pipe(browsersync.stream())
 }
 
 // Template engine nunjuks/njk
 function nunjucks() {
     return gulp
-        .src("./resources/pages/*.njk")
+        .src("resources/pages/*.njk")
         .pipe(plumber())
         .pipe(render({
-            path: ["./resources/templates"]
+            path: ["resources/templates"]
         }))
-        .pipe(gulp.dest("./public/"))
+        .pipe(gulp.dest("public/"))
         .pipe(browsersync.stream())
 }
 
 function js() {
     return gulp
         .src([
-            './node_modules/bootstrap/dist/js/bootstrap.min.js',
-            './node_modules/jquery/dist/jquery.min.js',
-            './node_modules/popper.js/dist/umd/popper.min.js',
-            './node_modules/wow.js/dist/wow.min.js',
+            'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/popper.js/dist/umd/popper.min.js',
+            'node_modules/wow.js/dist/wow.min.js',
         ])
-        .pipe(gulp.dest('./public/js/'))
+        .pipe(gulp.dest('public/js/'))
 }
 
 function css() {
     return gulp
         .src([
-            './node_modules/animate.css/animate.min.css',
+            'node_modules/animate.css/animate.min.css',
         ])
-        .pipe(gulp.dest('./public/css/'))
+        .pipe(gulp.dest('public/css/'))
 }
 
 // Watch files
 function watchFiles() {
-  gulp.watch("./resources/scss/**/*.scss", styles); // css
-  gulp.watch("./resources/js/*.js", scripts); // js
-  gulp.watch("./resources/pages/**/*.njk", nunjucks); // pages njk
-  gulp.watch("./resources/templates/**/*.njk", nunjucks); // templates njk
-  gulp.watch("./resources/images/**/*", images); // images
-  gulp.watch("./public/*.html").on('change', browserSyncReload); // html
+  gulp.watch("resources/scss/**/*.scss", styles); // css
+  gulp.watch("resources/js/*.js", scripts); // js
+  gulp.watch("resources/pages/**/*.njk", nunjucks); // pages njk
+  gulp.watch("resources/templates/**/*.njk", nunjucks); // templates njk
+  gulp.watch("resources/images/**/*", images); // images
+  gulp.watch("public/*.html").on('change', browserSyncReload); // html
 }
 
 // Define complex tasks

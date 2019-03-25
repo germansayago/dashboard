@@ -1,5 +1,14 @@
 $sidebar-min-with: 15rem;
 
+.wrapper{
+    // background-color: red;
+    &.toggled {
+        .sidebar {
+            margin-left: 0;
+        }
+    }
+}
+
 .sidebar {
     background-color: $primary;
     min-height: 100vh;
@@ -19,31 +28,36 @@ $sidebar-min-with: 15rem;
     }
 
     .sidebar-heading {
-        padding: 0.7rem 1rem;
-        font-size: 1.03rem;
-        background-color: $light;
-        border-right: 1px solid white;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(white, 0.2);
+        a{
+            color: white;
+        }
     }
 
     .sidebar-menu{
         width: $sidebar-min-with;
         .sidebar-item{            
             .sidebar-link{
-                background-color: darken($primary, 0%);
-                border-bottom: 1px solid darken($primary, 4%);
                 color: white;
                 display: block;
                 text-decoration: none;
                 font-size: 0.95rem;
-                padding: 0.6rem 1rem;
+                padding: 0.6rem 1.5rem;
 
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
                 
+                .sidebar-icon,
+                .sidebar-caret{
+                        opacity: 0.6;
+                }
+
                 .sidebar-icon{
-                    margin-right: 0.2rem;
+                    margin-right: 0.4rem;
                 }
                 .sidebar-text{}
                 .sidebar-caret{}
@@ -56,24 +70,23 @@ $sidebar-min-with: 15rem;
                         opacity: 1;
                     }
                 }
-
-            }
-            
-            &:first-child{
-                .sidebar-link{
-                    //border-top: 1px solid darken($primary, 4%);
-                }
             }
 
-            .sidebar-collapse{                
-                .sidebar-link{
-                    background-color: darken($primary, 4%);
-                    color: $gray-300;
+            .sidebar-collapse{
+                .sidebar-link{                    
+                    background-color: darken($primary, 2%);      
+                    color: rgba($white, 0.7);
                     display: block;
                     text-decoration: none;
                     font-size: 0.9rem;
-                    padding: 0.4rem 2.4rem;
-                    border-bottom: 1px solid darken($primary, 8%);
+                    padding: 0.4rem 1rem 0.4rem 3.2rem;
+                    &:hover{
+                        color: white; 
+                    }
+                    &.incomplete{
+                        color: rgba($white, 0.2);
+                        text-decoration-line: line-through;
+                    }
                 }   
             }
             
@@ -84,7 +97,7 @@ $sidebar-min-with: 15rem;
                     .sidebar-text,
                     .sidebar-caret{
                         opacity: 1;
-                    }
+                    }                   
                 } 
             }
         }
@@ -92,7 +105,6 @@ $sidebar-min-with: 15rem;
     }
     
     .sidebar-banner{
-        // background-color: lighten($primary, 25%);
         border: 1px solid lighten($primary, 25%);
         margin: 0 1rem;
         color: lighten($primary, 25%);
@@ -101,31 +113,18 @@ $sidebar-min-with: 15rem;
         text-transform: uppercase;
         font-size: 1rem;
     }
-    
+
 }
 
 .page-content-wrapper {
     min-width: 100vw;
     position: relative;
     .container-fluid{
-        padding: 0rem 1.5rem; 
-    }
-}
-  
-.wrapper{
-    &.toggled {
-        .sidebar {
-            margin-left: 0;
-        }
+        padding: 1.6rem 1.5rem; 
     }
 }
 
-@media(max-width: 767px){
-    .page-content-wrapper{        
-        .container-fluid{}
-    }
-}
-  
+// responsive
 @media (min-width: 768px) {
     .sidebar {
         margin-left: 0;
