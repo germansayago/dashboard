@@ -1,0 +1,41 @@
+{% extends "layouts.njk" %}
+
+{# Setting #}
+{% set title = 'Title' %}
+{% set breadcrumbItems =[ { name: 'Base' }, { name: title} ] %}
+{% set headerTitle = title %}
+{% set headerText = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.' %}
+
+{# Title #}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{# Content #}
+{% block content %}
+
+    {# breadcrumb #}
+    {{ breadcrumb.block(breadcrumbItems) }}
+
+    {# header #}
+    {{ header.block(headerTitle, headerText) }}
+
+    {# card columns custom #}
+    <section class="card-columns">
+        <div class="card portlet">
+            <div class="portlet-head">
+                <div class="head-label">
+                    Basic Example
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="section">
+                    <div class="section-title">title</div>
+                    <div class="section-info">info</div>
+                    <div class="section-content">content</div>
+                </div>
+            </div>
+        </div>
+    </section>             
+    
+{% endblock %}

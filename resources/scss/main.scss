@@ -2,12 +2,23 @@
 @import 'bootstrap';
 
 // components
+// @import 'components/base';
+// @import 'components/buttons';
+// @import 'components/navbar';
+// @import 'components/hamburguer-menu';
+// @import 'components/sidebar';
+// @import 'components/header';
+// @import 'components/breadcrumb';
+// @import 'components/portlet';
+// @import 'components/card';
+// @import 'components/footer';
+
+// skin
 @import 'components/base';
-@import 'components/navbar';
-@import 'components/hamburguer-menu';
 @import 'components/sidebar';
-@import 'components/header';
-@import 'components/breadcrumb';
 @import 'components/portlet';
+
+// ui
+@import 'components/buttons';
 @import 'components/card';
-@import 'components/footer';
+

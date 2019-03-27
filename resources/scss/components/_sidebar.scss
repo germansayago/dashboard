@@ -28,7 +28,7 @@ $sidebar-min-with: 15rem;
     }
 
     .sidebar-heading {
-        padding: 1rem 1.5rem;
+        padding: 1.2rem 1.5rem;
         font-size: 1.1rem;
         border-bottom: 1px solid rgba(white, 0.2);
         a{
@@ -43,8 +43,8 @@ $sidebar-min-with: 15rem;
                 color: white;
                 display: block;
                 text-decoration: none;
-                font-size: 0.95rem;
-                padding: 0.6rem 1.5rem;
+                font-size: 1rem;
+                padding: 1rem 1.5rem;
 
                 display: flex;
                 flex-direction: row;
@@ -53,7 +53,8 @@ $sidebar-min-with: 15rem;
                 
                 .sidebar-icon,
                 .sidebar-caret{
-                        opacity: 0.6;
+                    opacity: 0.6;
+                    transition: transform 0.1s ease-in-out;
                 }
 
                 .sidebar-icon{
@@ -62,12 +63,20 @@ $sidebar-min-with: 15rem;
                 .sidebar-text{}
                 .sidebar-caret{}
 
-                &:hover{
+                &.active, 
+                &:hover,
+                &[aria-expanded="true"]{
                     background-color: lighten($primary, 4%);
                     .sidebar-icon,
                     .sidebar-text,
                     .sidebar-caret{
                         opacity: 1;
+                    }
+                }
+
+                &[aria-expanded="true"]{
+                    .sidebar-caret{
+                        transform: rotate(-180deg);
                     }
                 }
             }
@@ -88,6 +97,12 @@ $sidebar-min-with: 15rem;
                         text-decoration-line: line-through;
                     }
                 }   
+            }
+
+            &:first-child{
+                .sidebar-link{
+                    border-top: 0px;
+                }
             }
             
             &.active{

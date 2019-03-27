@@ -11,31 +11,26 @@
 </head>
 <body>
 
-    <div class="d-flex wrapper" id="wrapper">
-        
+    <div class="d-flex wrapper" id="wrapper">        
         {% include "components/sidebar.njk" %}
-
         <div class="page-content-wrapper mb-5" id="page-content-wrapper">
-
             {% include "components/navbar.njk" %}
-
             <div class="container-fluid">
-
                 {% import "components/breadcrumb.njk" as breadcrumb %}
                 {% import "components/header.njk" as header %}
-
                 {% block content %}{% endblock %}    
-
-            </div>
-                        
+            </div>                        
         </div>
-
     </div>
 
+    {# scripts commons #}
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/wow.min.js"></script>
     <script src="./js/main.js?v=1.0.1"></script>
+
+    {# scripts specials #}
+    {% block scripts %}{% endblock %}
 </body>
 </html>
