@@ -1,0 +1,156 @@
+{% extends "layouts.njk" %}
+
+{# Setting #}
+{% set title = 'General' %}
+{% set breadcrumbItems =[ { name: 'Base' }, { name: title} ] %}
+{% set headerTitle = title %}
+{% set headerText = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.' %}
+
+{# Title #}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{# Content #}
+{% block content %}
+
+    {# breadcrumb #}
+    {{ breadcrumb.block(breadcrumbItems) }}
+
+    {# header #}
+    {{ header.block(headerTitle, headerText) }}
+
+    <section>
+        <div class="row">
+            <div class="col-lg-6">
+                
+                {% include "components/accordion.njk" %}
+
+                {# ini card #}
+                <div class="card">
+                    <div class="card-header">
+                        Breadcrumbs
+                    </div>
+                    <div class="card-body">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Data</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                {# end card #}
+              
+                {# ini card #}
+                <div class="card">
+                    <div class="card-header">
+                        Images
+                    </div>
+                    <div class="card-body">                        
+                        {% include "components/images.njk" %}
+
+                    </div>
+                </div>
+                {# end card #}
+              
+                {# ini card #}
+                <div class="card">
+                    <div class="card-header">
+                        Popovers
+                    </div>
+                    <div class="card-body">                        
+                        {% include "components/popovers.njk" %}
+
+                    </div>
+                </div>
+                {# end card #}
+              
+                {# ini card #}
+                <div class="card">
+                    <div class="card-header">
+                        Tooltips
+                    </div>
+                    <div class="card-body">                        
+                        {% include "components/tooltips.njk" %}
+
+                    </div>
+                </div>
+                {# end card #}
+
+                {# ini card #}
+                <div class="card">
+                    <div class="card-header">
+                        Progress Bars
+                    </div>
+                    <div class="card-body">
+                        {% include "components/progress-bars.njk" %}
+                    </div>
+                </div>
+                {# end card #}
+
+            </div>
+
+            <div class="col-lg-6">
+                
+                {# ini card #}
+                <div class="card">
+                    <div class="card-header">
+                        Badges
+                    </div>
+                    <div class="card-body">
+                        {% include "components/badges.njk" %}
+                    </div>
+                </div>
+                {# end card #}
+                
+                {# ini card #}
+                <div class="card">
+                    <div class="card-header">
+                        Dropdowns
+                    </div>
+                    <div class="card-body">
+                        {% include "components/dropdowns.njk" %}
+                    </div>
+                </div>
+                {# end card #}
+                
+                {# ini card #}
+                <div class="card">
+                    <div class="card-header">
+                        Pagination
+                    </div>
+                    <div class="card-body">
+                        {% include "components/pagination.njk" %}
+                    </div>
+                </div>
+                {# end card #}
+                
+                
+                
+                {# ini card #}
+                <div class="card">
+                    <div class="card-header">
+                        Spinners
+                    </div>
+                    <div class="card-body">
+                        {% include "components/spinners.njk" %}
+                    </div>
+                </div>
+                {# end card #}
+
+            </div>
+        </div>
+    </section>       
+    
+{% endblock %}
+
+{% block scripts %}
+<script>
+$(function () {
+    $('[data-toggle="popover"]').popover();
+    $('[data-toggle="tooltip"]').tooltip();
+})
+</script>
+{% endblock %}

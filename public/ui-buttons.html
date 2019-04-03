@@ -13,8 +13,9 @@
 </head>
 <body>
 
-    <div class="d-flex wrapper" id="wrapper">        
-        <div class="sidebar" id="sidebar">
+    <div class="wrapper">  
+
+        <div class="sidebar">
     <div class="sticky-top">
 
         <div class="sidebar-heading">
@@ -37,7 +38,7 @@
                     <a href="ui-alerts.html" class="sidebar-link">• Alerts</a>
                     <a href="ui-buttons.html" class="sidebar-link">• Buttons</a>
                     <a href="ui-cards.html" class="sidebar-link">• Cards</a>
-                    <a href="" class="sidebar-link incomplete">• General</a>
+                    <a href="ui-general.html" class="sidebar-link">• General</a>
                     <a href="" class="sidebar-link incomplete">• Grid</a>
                     <a href="" class="sidebar-link incomplete">• Modals</a>
                     <a href="" class="sidebar-link incomplete">• Notifications</a>
@@ -119,10 +120,12 @@
 
     </div>
 </div>
-        <div class="page-content-wrapper mb-5" id="page-content-wrapper">
+    
+        <div class="page-content-wrapper mb-5">
+    
             <nav class="navbar sticky-top navbar-expand-md navbar-primary bg-light">
 
-    <div class="hamburger" id="sidebar-toggle">
+    <div class="sidebar-toggler btn-animated" aria-expanded="false">
         <span class="line"></span>
         <span class="line"></span>
         <span class="line"></span>
@@ -134,7 +137,7 @@
         </a>   
     </div>
 
-    <div class="navbar-toggler hamburger" id="navbar-toggle" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="navbar-toggler btn-animated" id="navbar-toggle" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="line"></span>
         <span class="line"></span>
         <span class="line"></span>
@@ -162,6 +165,7 @@
         </ul>
     </div>
 </nav>
+    
             <div class="container-fluid">
                 
                 
@@ -170,7 +174,7 @@
     
     
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-3">
             
                 <li class="breadcrumb-item">Base</li>                
             
@@ -186,91 +190,70 @@
         <div class="row">
             <div class="col">
                 <h4>Buttons</h4>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <p></p>
             </div>
         </div>            
     </header>
 
 
-    <section class="card-columns">
-        
-        <div class="card portlet">
-            <div class="portlet-head">
-                <div class="head-label">
-                    Basic Example
-                </div>
-            </div>
-            <div class="portlet-body">
-                <div class="section">
-                    <div class="section-content">
-                        <button type="button" class="btn btn-primary">Primary</button>
-                        <button type="button" class="btn btn-secondary">Secondary</button>
-                        <button type="button" class="btn btn-success">Success</button>
-                        <button type="button" class="btn btn-danger">Danger</button>
-                        <button type="button" class="btn btn-warning">Warning</button>
-                        <button type="button" class="btn btn-info">Info</button>
-                        <button type="button" class="btn btn-light">Light</button>
-                        <button type="button" class="btn btn-dark">Dark</button>
-                        <button type="button" class="btn btn-link">Link</button>
+    <section>
+        <div class="row">
+             <div class="col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-header">Ejemplo básico de uso</div>
+                    <div class="card-body">
+                        <button type="button" class="btn mb-2 btn-primary">Primary</button>
+                        <button type="button" class="btn mb-2 btn-secondary">Secondary</button>
+                        <button type="button" class="btn mb-2 btn-success">Success</button>
+                        <button type="button" class="btn mb-2 btn-danger">Danger</button>
+                        <button type="button" class="btn mb-2 btn-warning">Warning</button>
+                        <button type="button" class="btn mb-2 btn-info">Info</button>
+                        <button type="button" class="btn mb-2 btn-light">Light</button>
+                        <button type="button" class="btn mb-2 btn-dark">Dark</button>
+                        <button type="button" class="btn mb-2 btn-link">Link</button>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="card portlet">
-            <div class="portlet-head">
-                <div class="head-label">
-                    Sizes
+                <div class="card">
+                    <div class="card-header">Tamaños</div>
+                    <div class="card-body">
+                        <button type="button" class="btn mb-2 btn-primary btn-lg">Large button</button>
+                        <button type="button" class="btn mb-2 btn-primary">Default button</button>
+                        <button type="button" class="btn mb-2 btn-primary btn-sm">Small button</button>
+                    </div>
                 </div>
             </div>
-            <div class="portlet-body">
-                <div class="section">
-                    <div class="section-content">
-                        <button type="button" class="btn btn-primary btn-lg">Large button</button>
-                        <button type="button" class="btn btn-primary">Default button</button>
-                        <button type="button" class="btn btn-primary btn-sm">Small button</button>
+             <div class="col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-header">Contorno</div>
+                    <div class="card-body">
+                         <button type="button" class="btn mb-2 btn-outline-primary">Primary</button>
+                        <button type="button" class="btn mb-2 btn-outline-secondary">Secondary</button>
+                        <button type="button" class="btn mb-2 btn-outline-success">Success</button>
+                        <button type="button" class="btn mb-2 btn-outline-danger">Danger</button>
+                        <button type="button" class="btn mb-2 btn-outline-warning">Warning</button>
+                        <button type="button" class="btn mb-2 btn-outline-info">Info</button>
+                        <button type="button" class="btn mb-2 btn-outline-light">Light</button>
+                        <button type="button" class="btn mb-2 btn-outline-dark">Dark</button>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="card portlet">
-            <div class="portlet-head">
-                <div class="head-label">
-                    Outline buttons
-                </div>
-            </div>
-            <div class="portlet-body">
-                <div class="section">
-                    <div class="section-content">
-                        <button type="button" class="btn btn-outline-primary">Primary</button>
-                        <button type="button" class="btn btn-outline-secondary">Secondary</button>
-                        <button type="button" class="btn btn-outline-success">Success</button>
-                        <button type="button" class="btn btn-outline-danger">Danger</button>
-                        <button type="button" class="btn btn-outline-warning">Warning</button>
-                        <button type="button" class="btn btn-outline-info">Info</button>
-                        <button type="button" class="btn btn-outline-light">Light</button>
-                        <button type="button" class="btn btn-outline-dark">Dark</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-
     </section>
 
              
     
     
             </div>                        
+    
         </div>
+    
     </div>
 
     
     <script src="./js/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
     <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
     <script src="./js/wow.min.js"></script>
     <script src="./js/main.js?v=1.0.1"></script>
 

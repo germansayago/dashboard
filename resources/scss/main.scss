@@ -1,24 +1,24 @@
-// bootstrap framework
+// load docs dependencies
 @import 'bootstrap';
 
-// components
+// Load docs components
+@import 'dashboard';
+@import 'navbar';
+@import 'card';
+@import 'spinners';
+
+
+
+
 // @import 'components/base';
-// @import 'components/buttons';
-// @import 'components/navbar';
-// @import 'components/hamburguer-menu';
 // @import 'components/sidebar';
-// @import 'components/header';
-// @import 'components/breadcrumb';
+// @import 'components/navbar';
 // @import 'components/portlet';
+
+
+// // ui
 // @import 'components/card';
-// @import 'components/footer';
-
-// skin
-@import 'components/base';
-@import 'components/sidebar';
-@import 'components/portlet';
-
-// ui
-@import 'components/buttons';
-@import 'components/card';
+// @import 'components/accordion';
+// @import 'components/alerts';
+// @import 'components/buttons';
 

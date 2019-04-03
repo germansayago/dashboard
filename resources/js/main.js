@@ -1,11 +1,11 @@
 $(document).ready(function(){
     
-    $("#sidebar-toggle").click(function(e) {
+    $(".sidebar-toggler").click(function(e) {
         e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
+        $(".wrapper").toggleClass("toggled");
     });
 
-    $(".hamburger").click(function(){
+    $(".btn-animated").click(function(){
         $(this).toggleClass("is-active");
     });
   

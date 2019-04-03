@@ -13,8 +13,9 @@
 </head>
 <body>
 
-    <div class="d-flex wrapper" id="wrapper">        
-        <div class="sidebar" id="sidebar">
+    <div class="wrapper">  
+
+        <div class="sidebar">
     <div class="sticky-top">
 
         <div class="sidebar-heading">
@@ -37,7 +38,7 @@
                     <a href="ui-alerts.html" class="sidebar-link">• Alerts</a>
                     <a href="ui-buttons.html" class="sidebar-link">• Buttons</a>
                     <a href="ui-cards.html" class="sidebar-link">• Cards</a>
-                    <a href="" class="sidebar-link incomplete">• General</a>
+                    <a href="ui-general.html" class="sidebar-link">• General</a>
                     <a href="" class="sidebar-link incomplete">• Grid</a>
                     <a href="" class="sidebar-link incomplete">• Modals</a>
                     <a href="" class="sidebar-link incomplete">• Notifications</a>
@@ -119,10 +120,12 @@
 
     </div>
 </div>
-        <div class="page-content-wrapper mb-5" id="page-content-wrapper">
+    
+        <div class="page-content-wrapper mb-5">
+    
             <nav class="navbar sticky-top navbar-expand-md navbar-primary bg-light">
 
-    <div class="hamburger" id="sidebar-toggle">
+    <div class="sidebar-toggler btn-animated" aria-expanded="false">
         <span class="line"></span>
         <span class="line"></span>
         <span class="line"></span>
@@ -134,7 +137,7 @@
         </a>   
     </div>
 
-    <div class="navbar-toggler hamburger" id="navbar-toggle" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="navbar-toggler btn-animated" id="navbar-toggle" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="line"></span>
         <span class="line"></span>
         <span class="line"></span>
@@ -162,6 +165,7 @@
         </ul>
     </div>
 </nav>
+    
             <div class="container-fluid">
                 
                 
@@ -170,7 +174,7 @@
     
     
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-3">
             
         </ol>
     </nav>
@@ -199,13 +203,15 @@
     
     
             </div>                        
+    
         </div>
+    
     </div>
 
     
     <script src="./js/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
     <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
     <script src="./js/wow.min.js"></script>
     <script src="./js/main.js?v=1.0.1"></script>
 

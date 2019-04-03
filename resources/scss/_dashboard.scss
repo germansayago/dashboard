@@ -1,0 +1,207 @@
+// Dashboard
+//
+//
+
+
+// settings
+//
+
+$sidebar-min-with: 15rem;
+
+
+// styles
+//
+
+// wrapper
+.wrapper{
+    
+    &.toggled {
+        .sidebar {
+            margin-left: 0;
+        }
+    }
+
+    display: flex;
+
+    .sidebar {
+        background-color: $primary;
+        min-height: 100vh;
+        margin-left: -$sidebar-min-with;
+        -webkit-transition: margin .25s ease-out;
+        -moz-transition: margin .25s ease-out;
+        -o-transition: margin .25s ease-out;
+        transition: margin .25s ease-out;
+    
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        
+        .sidebar-heading {
+            padding: 1.2rem 1.5rem;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(white, 0.2);
+        }
+    
+        .sidebar-menu{
+            width: $sidebar-min-with;
+            .sidebar-item{            
+                .sidebar-link{
+                    display: block;
+                    text-decoration: none;
+                    font-size: 1rem;
+                    padding: 1rem 1.5rem;
+    
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    
+                    .sidebar-icon,
+                    .sidebar-caret{
+                        opacity: 0.6;
+                        transition: transform 0.1s ease-in-out;
+                    }    
+                    .sidebar-icon{
+                        margin-right: 0.4rem;
+                    }
+
+                    &.active, 
+                    &:hover,
+                    &[aria-expanded="true"]{
+                        background-color: lighten($primary, 4%);
+                        .sidebar-icon,
+                        .sidebar-text,
+                        .sidebar-caret{
+                            opacity: 1;
+                        }
+                    }  
+
+                    &[aria-expanded="true"]{
+                        .sidebar-caret{
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+    
+                .sidebar-collapse{
+                    .sidebar-link{                    
+                        background-color: darken($primary, 2%);      
+                        color: rgba($white, 0.7);
+                        display: block;
+                        text-decoration: none;
+                        font-size: 0.9rem;
+                        padding: 0.4rem 1rem 0.4rem 3.2rem;
+                        &:hover{
+                            color: white; 
+                        }
+                        &.incomplete{
+                            color: rgba($white, 0.2);
+                            text-decoration-line: line-through;
+                        }
+                    }   
+                }
+    
+                &:first-child{
+                    .sidebar-link{
+                        border-top: 0px;
+                    }
+                }
+                
+                &.active{
+                    .sidebar-link{
+                        background-color: darken($primary, 8%);
+                        .sidebar-icon,
+                        .sidebar-text,
+                        .sidebar-caret{
+                            opacity: 1;
+                        }                   
+                    } 
+                }
+            }
+    
+        }
+    
+    }    
+    .page-content-wrapper {
+        min-width: 100vw;
+        position: relative;
+        .container-fluid{
+            padding: 1.6rem 1.5rem; 
+        }
+    }
+}
+
+
+// card-columns
+// 
+
+.card-columns {
+    @include media-breakpoint-only(sm) {
+        column-count: 1;
+    }
+    @include media-breakpoint-only(md) {
+        column-count: 1;
+    }
+    @include media-breakpoint-only(lg) {
+        column-count: 2;
+    }
+    @include media-breakpoint-only(xl) {
+        column-count: 2;
+    }
+}
+
+// breadcrumb
+.breadcrumb{
+    margin-bottom: 0rem;
+    .breadcrumb-item{
+        color: $gray-600;
+    }
+}
+
+
+// cards
+.card{
+    .cd-placeholder-img {
+        text-anchor: middle;
+    }
+}
+
+// dropdowns
+.dropdown-menu{
+    font-size: 0.8rem;
+    .dropdown-item{
+        padding: 0.3rem 1rem;
+    }
+}
+
+//accordion
+.accordion{
+    .card{
+        margin-bottom: 0px;
+        display: block;
+
+        .card-header{
+            background-color: #f5f5f5;
+        }
+    }  
+}
+
+
+// responsive
+@media (min-width: 768px) {
+    .wrapper{
+        &.toggled{
+            .sidebar {
+                margin-left: -$sidebar-min-with;          
+            }
+        }
+        .sidebar {
+            margin-left: 0;
+        }
+        .page-content-wrapper {
+            min-width: 0;
+            width: 100%;
+        }
+    }
+}

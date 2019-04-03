@@ -4,7 +4,7 @@
 {% set title = 'Buttons' %}
 {% set breadcrumbItems =[ { name: 'Base' }, { name: title} ] %}
 {% set headerTitle = title %}
-{% set headerText = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.' %}
+{% set headerText = '' %}
 
 {# Title #}
 {% block title %}
@@ -20,72 +20,49 @@
     {# header #}
     {{ header.block(headerTitle, headerText) }}
 
-    <section class="card-columns">
-        
-        <div class="card portlet">
-            <div class="portlet-head">
-                <div class="head-label">
-                    Basic Example
-                </div>
-            </div>
-            <div class="portlet-body">
-                <div class="section">
-                    <div class="section-content">
-                        <button type="button" class="btn btn-primary">Primary</button>
-                        <button type="button" class="btn btn-secondary">Secondary</button>
-                        <button type="button" class="btn btn-success">Success</button>
-                        <button type="button" class="btn btn-danger">Danger</button>
-                        <button type="button" class="btn btn-warning">Warning</button>
-                        <button type="button" class="btn btn-info">Info</button>
-                        <button type="button" class="btn btn-light">Light</button>
-                        <button type="button" class="btn btn-dark">Dark</button>
-                        <button type="button" class="btn btn-link">Link</button>
+    <section>
+        <div class="row">
+             <div class="col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-header">Ejemplo básico de uso</div>
+                    <div class="card-body">
+                        <button type="button" class="btn mb-2 btn-primary">Primary</button>
+                        <button type="button" class="btn mb-2 btn-secondary">Secondary</button>
+                        <button type="button" class="btn mb-2 btn-success">Success</button>
+                        <button type="button" class="btn mb-2 btn-danger">Danger</button>
+                        <button type="button" class="btn mb-2 btn-warning">Warning</button>
+                        <button type="button" class="btn mb-2 btn-info">Info</button>
+                        <button type="button" class="btn mb-2 btn-light">Light</button>
+                        <button type="button" class="btn mb-2 btn-dark">Dark</button>
+                        <button type="button" class="btn mb-2 btn-link">Link</button>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="card portlet">
-            <div class="portlet-head">
-                <div class="head-label">
-                    Sizes
+                <div class="card">
+                    <div class="card-header">Tamaños</div>
+                    <div class="card-body">
+                        <button type="button" class="btn mb-2 btn-primary btn-lg">Large button</button>
+                        <button type="button" class="btn mb-2 btn-primary">Default button</button>
+                        <button type="button" class="btn mb-2 btn-primary btn-sm">Small button</button>
+                    </div>
                 </div>
             </div>
-            <div class="portlet-body">
-                <div class="section">
-                    <div class="section-content">
-                        <button type="button" class="btn btn-primary btn-lg">Large button</button>
-                        <button type="button" class="btn btn-primary">Default button</button>
-                        <button type="button" class="btn btn-primary btn-sm">Small button</button>
+             <div class="col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-header">Contorno</div>
+                    <div class="card-body">
+                         <button type="button" class="btn mb-2 btn-outline-primary">Primary</button>
+                        <button type="button" class="btn mb-2 btn-outline-secondary">Secondary</button>
+                        <button type="button" class="btn mb-2 btn-outline-success">Success</button>
+                        <button type="button" class="btn mb-2 btn-outline-danger">Danger</button>
+                        <button type="button" class="btn mb-2 btn-outline-warning">Warning</button>
+                        <button type="button" class="btn mb-2 btn-outline-info">Info</button>
+                        <button type="button" class="btn mb-2 btn-outline-light">Light</button>
+                        <button type="button" class="btn mb-2 btn-outline-dark">Dark</button>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="card portlet">
-            <div class="portlet-head">
-                <div class="head-label">
-                    Outline buttons
-                </div>
-            </div>
-            <div class="portlet-body">
-                <div class="section">
-                    <div class="section-content">
-                        <button type="button" class="btn btn-outline-primary">Primary</button>
-                        <button type="button" class="btn btn-outline-secondary">Secondary</button>
-                        <button type="button" class="btn btn-outline-success">Success</button>
-                        <button type="button" class="btn btn-outline-danger">Danger</button>
-                        <button type="button" class="btn btn-outline-warning">Warning</button>
-                        <button type="button" class="btn btn-outline-info">Info</button>
-                        <button type="button" class="btn btn-outline-light">Light</button>
-                        <button type="button" class="btn btn-outline-dark">Dark</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-
     </section>
 
              

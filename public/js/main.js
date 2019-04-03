@@ -1,1 +1,1 @@
-$(document).ready(function(){$("#sidebar-toggle").click(function(e){e.preventDefault(),$("#wrapper").toggleClass("toggled")}),$(".hamburger").click(function(){$(this).toggleClass("is-active")})});
+$(document).ready(function(){$(".sidebar-toggler").click(function(t){t.preventDefault(),$(".wrapper").toggleClass("toggled")}),$(".btn-animated").click(function(){$(this).toggleClass("is-active")})});

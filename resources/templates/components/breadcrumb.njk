@@ -1,6 +1,6 @@
 {% macro block(breadcrumbItems) %}
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-3">
             {% for item in breadcrumbItems %}
                 <li class="breadcrumb-item">{{ item.name }}</li>                
             {% endfor %}
