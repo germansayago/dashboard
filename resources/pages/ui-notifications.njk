@@ -1,0 +1,204 @@
+{% extends "layouts.njk" %}
+
+{# Setting #}
+{% set title = 'Notifications' %}
+{% set breadcrumbItems =[ { name: 'UI Elements' }, { name: title} ] %}
+{% set headerTitle = title %}
+{% set headerText = '' %}
+
+{# Title #}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{# Content #}
+{% block content %}
+
+    {# breadcrumb #}
+    {{ breadcrumb.block(breadcrumbItems) }}
+
+    {# header #}
+    {{ header.block(headerTitle, headerText) }}
+
+    {# card columns custom #}
+    <section>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">Notifications using Toast</div>
+                    <div class="card-body">
+                        <button class="btn btn-primary mr-1 mb-2" id="toast-show-1">Basic example</button>
+                        <button class="btn btn-primary mr-1 mb-2" id="toast-show-2">Stacking</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">Notifications using Alertify</div>
+                    <div class="card-body">
+                        <button class="btn btn-secondary mr-1 mb-2 disabled" id="toast-show-1">Basic example</button>
+                    </div>
+                </div>
+            </div>
+        </div>   
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">Notifications using Toastr library - Types</div>
+                    <div class="card-body">
+                        <button class="btn btn-info mr-1 mb-2" id="toastr-info">Info</button>
+                        <button class="btn btn-warning mr-1 mb-2" id="toastr-warning">Warning</button>
+                        <button class="btn btn-success mr-1 mb-2" id="toastr-success">Success</button>
+                        <button class="btn btn-danger mr-1 mb-2" id="toastr-error">error</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">Notifications using Toastr library - Positions</div>
+                    <div class="card-body">
+                        <button class="btn btn-info mr-1 mb-2" id="toastr-4">Top Left</button>
+                        <button class="btn btn-info mr-1 mb-2" id="toastr-7">Top Center</button>
+                        <button class="btn btn-info mr-1 mb-2" id="toastr-1">Top Right</button>
+                        <button class="btn btn-info mr-1 mb-2" id="toastr-3">Bottom Left</button>
+                        <button class="btn btn-info mr-1 mb-2" id="toastr-8">Bottom Center</button>
+                        <button class="btn btn-info mr-1 mb-2" id="toastr-2">Bottom Right</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="notifications">
+        {% include "components/toast.njk" %}    
+    </div>
+    
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+$(function() {
+    
+    $("#toast-show-1").click(function() {
+        $('#notification-1 .toast').toast('show');
+    });
+    $("#toast-show-2").click(function() {
+        $('#notification-2 .toast').toast('show');
+    });
+
+    // toastr library
+    $("#toastr-info").click(function() {
+        toastr.info('Are you the 6 fingered man? ', 'Notifications Info', {
+            "progressBar": true,
+            "closeButton": true,
+        });
+    });
+    $("#toastr-success").click(function() {
+        toastr.success('Are you the 6 fingered man?', 'Notifications Success', {
+            "progressBar": true,
+            "closeButton": true,
+        });
+    });
+    $("#toastr-warning").click(function() {
+        toastr.warning('Are you the 6 fingered man?', 'Notifications Warning', {
+            "progressBar": true,
+            "closeButton": true,
+        });
+    });
+    $("#toastr-error").click(function() {
+        toastr.error('Are you the 6 fingered man?', 'Notifications Error', {
+            "progressBar": true,
+            "closeButton": true,
+        });
+    });
+
+    // positions
+    $("#toastr-1").click(function() {
+        toastr.info('Are you the 6 fingered man?', 'Top Right', {
+            "positionClass": "toast-top-right",
+            "showDuration": "200",
+            "hideDuration": "200",
+            "timeOut": "3000",
+            "progressBar": true,
+            "closeButton": true,
+        });
+    });
+    $("#toastr-2").click(function() {
+        toastr.info('Are you the 6 fingered man?', 'Bottom Right', {
+            "positionClass": "toast-bottom-right",
+            "showDuration": "200",
+            "hideDuration": "200",
+            "timeOut": "3000",
+            "progressBar": true,
+            "closeButton": true,
+        });
+    });
+    $("#toastr-3").click(function() {
+        toastr.info('Are you the 6 fingered man?', 'Bottom Left', {
+            "positionClass": "toast-bottom-left",
+            "showDuration": "200",
+            "hideDuration": "200",
+            "timeOut": "3000",
+            "progressBar": true,
+            "closeButton": true,
+        });
+    });
+    $("#toastr-4").click(function() {
+        toastr.info('Are you the 6 fingered man?', 'Top Left', {
+            "positionClass": "toast-top-left",
+            "showDuration": "200",
+            "hideDuration": "200",
+            "timeOut": "3000",
+            "progressBar": true,
+            "closeButton": true,
+        });
+    });
+    $("#toastr-5").click(function() {
+        toastr.info('Are you the 6 fingered man?', 'Top Full Width', {
+            "positionClass": "toast-top-full-width",
+            "showDuration": "200",
+            "hideDuration": "200",
+            "timeOut": "3000",
+            "progressBar": true,
+            "closeButton": true,
+        });
+    });
+    $("#toastr-6").click(function() {
+        toastr.info('Are you the 6 fingered man?', 'Bottom Full Width', {
+            "positionClass": "toast-bottom-full-width",
+            "showDuration": "200",
+            "hideDuration": "200",
+            "timeOut": "3000",
+            "progressBar": true,
+            "closeButton": true,
+        });
+    });
+    $("#toastr-7").click(function() {
+        toastr.info('Are you the 6 fingered man?', 'Top Center', {
+            "positionClass": "toast-top-center",
+            "showDuration": "200",
+            "hideDuration": "200",
+            "timeOut": "3000",
+            "progressBar": true,
+            "closeButton": true,
+        });
+    });
+    $("#toastr-8").click(function() {
+        toastr.info('Are you the 6 fingered man?', 'Bottom Center', {
+            "positionClass": "toast-bottom-center",
+            "showDuration": "200",
+            "hideDuration": "200",
+            "timeOut": "3000",
+            "progressBar": true,
+            "closeButton": true,
+        });
+    });
+    
+});
+
+
+</script>
+{% endblock %}

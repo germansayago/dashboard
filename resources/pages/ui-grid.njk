@@ -1,0 +1,290 @@
+{% extends "layouts.njk" %}
+
+{# Setting #}
+{% set title = 'Grid' %}
+{% set breadcrumbItems =[ { name: 'UI Elements' }, { name: title} ] %}
+{% set headerTitle = title %}
+{% set headerText = '' %}
+
+{# Title #}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{# Content #}
+{% block content %}
+
+    {# breadcrumb #}
+    {{ breadcrumb.block(breadcrumbItems) }}
+
+    {# header #}
+    {{ header.block(headerTitle, headerText) }}
+
+    {# card columns custom #}
+    <section>
+
+        <div class="card">
+            <div class="card-header">
+                Sitema de grillas
+            </div>
+            <div class="card-body text-center">
+                 <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-12
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-6
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-6
+                            </div>
+                        </div>
+                    </div>            
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-4
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-4
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-4">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-4
+                            </div>
+                        </div>
+                    </div>            
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-3
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-3
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-3">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-3
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-3">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-3
+                            </div>
+                        </div>
+                    </div>            
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-2
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-2">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-2
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-2">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-2
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-2">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-2
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-2">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-2
+                            </div>
+                        </div>
+                    </div>            
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-1">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-1
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-1
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-1">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-1
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-1">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-1
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-1">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-1
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-1">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-1
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-1">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-1
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-1
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-1">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-1
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-1">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-1
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-1">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-1
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-1">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-1
+                            </div>
+                        </div>
+                    </div>            
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-8
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-4
+                            </div>
+                        </div>
+                    </div>            
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-3
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-6
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="col-lg-3">
+                        <div class="card bg-light">
+                            <div class="card-body px-0 bg-light">
+                                col-lg-3
+                            </div>
+                        </div>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+    </section>             
+    
+{% endblock %}

@@ -19,7 +19,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-imagemin": "^5.0.3",
     "gulp-newer": "^1.4.0",
-    "gulp-nunjucks-render": "^2.2.2",
+    "gulp-nunjucks-render": "^2.2.3",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
@@ -28,6 +28,7 @@
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.7",
+    "toastr": "^2.1.4",
     "wow.js": "^1.2.2"
   },
   "dependencies": {

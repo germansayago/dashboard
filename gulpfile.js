@@ -105,6 +105,7 @@ function js() {
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/popper.js/dist/umd/popper.min.js',
             'node_modules/wow.js/dist/wow.min.js',
+            'node_modules/toastr/build/toastr.min.js',
         ])
         .pipe(gulp.dest('public/js/'))
 }
