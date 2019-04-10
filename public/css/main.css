@@ -7094,11 +7094,8 @@ body {
         .wrapper .sidebar .sidebar-menu .sidebar-item.active .sidebar-link .sidebar-text,
         .wrapper .sidebar .sidebar-menu .sidebar-item.active .sidebar-link .sidebar-caret {
           opacity: 1; }
-  .wrapper .page-content-wrapper {
-    min-width: 100vw;
-    position: relative; }
-    .wrapper .page-content-wrapper .container-fluid {
-      padding: 1.6rem 1.5rem; }
+  .wrapper .main {
+    width: 100%; }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
   .card-columns {
@@ -7148,20 +7145,11 @@ body {
   .wrapper.toggled .sidebar {
     margin-left: -15rem; }
   .wrapper .sidebar {
-    margin-left: 0; }
-  .wrapper .page-content-wrapper {
-    min-width: 0;
-    width: 100%; } }
+    margin-left: 0; } }
 
 .navbar {
-  padding: 0.3rem 1rem;
-  font-size: 0.9rem; }
-  .navbar a {
-    text-decoration: none; }
-  .navbar .navbar-toggler {
-    border-radius: 0px; }
-  .navbar .navbar-nav {
-    text-align: right; }
+  border-bottom: 1px solid #ced4da;
+  width: 100%; }
   .navbar .btn-animated {
     padding: 8px;
     border: none; }
@@ -7188,10 +7176,44 @@ body {
       -ms-transform: translateY(-6px) rotate(-45deg);
       -o-transform: translateY(-6px) rotate(-45deg);
       transform: translateY(-6px) rotate(-45deg); }
+  .navbar .navbar-nav .nav-item .nav-link {
+    padding: 0.6rem 0.8rem 0.2rem 0.8rem; }
+    .navbar .navbar-nav .nav-item .nav-link .badge {
+      position: absolute;
+      top: -4px;
+      right: -8px;
+      transition: top .1s ease-out; }
+    .navbar .navbar-nav .nav-item .nav-link:hover .badge {
+      top: -8px; }
+  .navbar .navbar-nav .nav-item .dropdown-menu-lg {
+    padding: 0px; }
+    .navbar .navbar-nav .nav-item .dropdown-menu-lg .dropdown-menu-header {
+      padding: .5rem;
+      margin-bottom: 0px;
+      text-align: center;
+      display: block;
+      font-size: 0.8rem; }
+    .navbar .navbar-nav .nav-item .dropdown-menu-lg .list-group-item {
+      text-decoration: none;
+      padding: 0.5rem 1.3rem; }
+      .navbar .navbar-nav .nav-item .dropdown-menu-lg .list-group-item:hover {
+        background-color: #e9ecef; }
+    .navbar .navbar-nav .nav-item .dropdown-menu-lg .dropdown-menu-footer {
+      padding: .5rem;
+      margin-bottom: 0px;
+      text-align: center;
+      display: block;
+      font-size: .75rem; }
 
-@media (max-width: 767px) {
-  .navbar .navbar-nav {
-    text-align: center; } }
+@media (max-width: 575px) {
+  .navbar .navbar-nav .dropdown-menu-lg {
+    min-width: 100%; }
+  .navbar .dropdown {
+    position: inherit; } }
+
+@media (min-width: 576px) {
+  .navbar .navbar-nav .dropdown-menu-lg {
+    min-width: 20rem; } }
 
 .card {
   margin-bottom: 2rem; }

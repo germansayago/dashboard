@@ -142,4 +142,4 @@ exports.build = build;
 exports.clean = clean;
 
 // Export default
-exports.default = build;
+exports.default = watch;

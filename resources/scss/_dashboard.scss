@@ -122,14 +122,13 @@ $sidebar-min-with: 15rem;
     
         }
     
-    }    
-    .page-content-wrapper {
-        min-width: 100vw;
-        position: relative;
-        .container-fluid{
-            padding: 1.6rem 1.5rem; 
-        }
     }
+
+    .main{
+        width: 100%;
+    }
+      
+    
 }
 
 
@@ -210,10 +209,6 @@ $sidebar-min-with: 15rem;
         }
         .sidebar {
             margin-left: 0;
-        }
-        .page-content-wrapper {
-            min-width: 0;
-            width: 100%;
         }
     }
 }

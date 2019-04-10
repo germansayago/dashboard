@@ -59,9 +59,7 @@ $sidebar-min-with: 15rem;
                 .sidebar-icon{
                     margin-right: 0.4rem;
                 }
-                .sidebar-text{}
-                .sidebar-caret{}
-
+                
                 &.active, 
                 &:hover,
                 &[aria-expanded="true"]{
@@ -134,7 +132,7 @@ $sidebar-min-with: 15rem;
         margin-left: 0;
     }
     .page-content-wrapper {
-        min-width: 0;
+        min-width: 0;   
         width: 100%;
     }
     .wrapper{

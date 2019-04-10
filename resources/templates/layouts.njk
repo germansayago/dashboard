@@ -15,17 +15,17 @@
 
         {% include "components/sidebar.njk" %}
     
-        <div class="page-content-wrapper mb-5">
-    
+        <div class="main">
+            
             {% include "components/navbar.njk" %}
-    
-            <div class="container-fluid">
+            
+            <div class="container-fluid p-4">
                 {% import "components/breadcrumb.njk" as breadcrumb %}
                 {% import "components/header.njk" as header %}
-                {% block content %}{% endblock %}    
-            </div>                        
-    
-        </div>
+                {% block content %}{% endblock %}
+            </div>
+
+        </div>     
 
         {% block toast %}
             
