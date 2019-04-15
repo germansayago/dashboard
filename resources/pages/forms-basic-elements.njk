@@ -1,0 +1,261 @@
+{% extends "layouts.njk" %}
+
+{# Setting #}
+{% set title = 'Forms' %}
+{% set breadcrumbItems =[ { name: 'Base' }, { name: title} ] %}
+{% set headerTitle = title %}
+{% set headerText = '' %}
+
+{# Title #}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{# Content #}
+{% block content %}
+
+    {# breadcrumb #}
+    {{ breadcrumb.block(breadcrumbItems) }}
+
+    {# header #}
+    {{ header.block(headerTitle, headerText) }}
+
+    {# card columns custom #}
+    <section>
+        <div class="row">
+            
+            <div class="col-12 col-md-6">
+                
+                <div class="card">
+                    <div class="card-header">Input</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Input">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Select</div>
+                    <div class="card-body">
+                        <select class="form-control">
+                            <option>One</option>
+                            <option>Two</option>
+                            <option>Three</option>
+                            <option>Four</option>
+                            <option>Five</option>
+                        </select>
+                    </div>
+                </div>
+               
+                <div class="card">
+                    <div class="card-header">Checkboxes</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Default checkbox
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+                                <label class="form-check-label" for="defaultCheck2">
+                                    Disabled checkbox
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Radios</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Default radio
+                                </label>
+                            </div>
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Second default radio
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                                <label class="form-check-label" for="exampleRadios3">
+                                    Disabled radio
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="card">
+                    <div class="card-header">Textarea</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="7"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="card">
+                    <div class="card-header">Files</div>
+                    <div class="card-body">
+                        <label for="">Select a file</label>
+                        <input type="file" class="form-control-file">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Sizes</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-sm mb-3" placeholder="Small input">
+                            <input type="text" class="form-control mb-3" placeholder="Default input">
+                            <input type="text" class="form-control form-control-lg mb-3" placeholder="Large input">
+
+                            <hr>
+
+                            <select class="form-control form-control-sm mb-3">
+                                <option>Small select</option>
+                            </select>
+                            <select class="form-control mb-3">
+                                <option>Default select</option>
+                            </select>
+                            <select class="form-control form-control-lg mb-3">
+                                <option>Large select</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-12 col-md-6">
+
+                <div class="card">
+                    <div class="card-header">Readonly</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Readonly input here..." readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Custom selects</div>
+                    <div class="card-body">
+                        <select class="custom-select">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Custom cheackboxes</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox mb-1">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2" disabled>
+                                <label class="custom-control-label" for="customCheck2">Check this custom checkbox</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Custom Radios</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="custom-control custom-radio mb-1">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+                            </div>
+                            <div class="custom-control custom-radio mb-1">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" disabled>
+                                <label class="custom-control-label" for="customRadio3">Disabled radio</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Validator</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="validator1">First Name</label>
+                            <input type="text" value="German" class="form-control is-valid" id="validator1" placeholder="First Name" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="validator2">Last Name</label>
+                            <input type="text" class="form-control is-invalid" id="validator2" placeholder="Last Name" required>
+                            <div class="invalid-feedback">Please choose your last name!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Custom Files</div>
+                    <div class="card-body">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input">
+                            <label for="" class="custom-file-label">Select a file</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Switches</div>
+                    <div class="card-body">
+                        <div class="custom-control custom-switch mb-1">
+                            <input type="checkbox" class="custom-control-input" id="switch1">
+                            <label for="switch1" class="custom-control-label">Toogle this switch element</label>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" disabled id="switch2">
+                            <label for="switch2" class="custom-control-label">Disabled switch element</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Range</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="range1">Example range</label>
+                            <input type="range" class="custom-range" id="range1">                        
+                        </div>
+                        <div class="form-group">
+                            <label for="range2">Example range min:0 - max:5</label>
+                            <input type="range" class="custom-range" min="0" max="5" id="range2">                        
+                        </div>
+                        <div class="form-group">
+                            <label for="range3">Example range min:0 - max:5 - step:0.5</label>
+                            <input type="range" class="custom-range" min="0" max="5" step="0.5" id="range3">                        
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>             
+    
+{% endblock %}

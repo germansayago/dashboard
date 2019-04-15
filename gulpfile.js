@@ -106,6 +106,7 @@ function js() {
             'node_modules/popper.js/dist/umd/popper.min.js',
             'node_modules/wow.js/dist/wow.min.js',
             'node_modules/toastr/build/toastr.min.js',
+            'resources/js/manifest.json',
         ])
         .pipe(gulp.dest('public/js/'))
 }

@@ -7,9 +7,12 @@
     <title>
     Typography
 </title>
+    <meta name="theme-color" content="#db5945">
+    <link rel="icon" sizes="192x192" href="nice-highres.png">
+    <meta name="desciption" content="Dashboard">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/animate.min.css">
-    <link rel="stylesheet" href="./css/main.min.css?v=1.0.1">
+    <link rel="stylesheet" href="./css/main.min.css">
+    <link rel="manifest" href="js/manifest.json">
 </head>
 <body>
 
@@ -19,7 +22,8 @@
     <div class="sticky-top">
 
         <div class="sidebar-heading">
-            <a href="./">
+            <a href="./" class="d-flex">
+                <img src="https://via.placeholder.com/24x24.png?text=D/B" alt="..." class="rounded mr-2">
                 <span class="menu-text">DASHBOARD</span>
             </a>
         </div>
@@ -56,7 +60,7 @@
                     <div class="sidebar-caret"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse sidebar-collapse" id="menuForms">
-                    <a href="" class="sidebar-link incomplete">• Controls</a>
+                    <a href="forms-basic-elements.html" class="sidebar-link">• Basic Elements</a>
                     <a href="" class="sidebar-link incomplete">• Widgets</a>
                     <a href="" class="sidebar-link incomplete">• Layouts</a>
                     <a href="" class="sidebar-link incomplete">• Validations</a>
@@ -123,7 +127,7 @@
     
         <div class="main">
             
-            <nav class="navbar navbar-expand navbar-light bg-white">
+            <nav class="navbar navbar-expand navbar-light bg-white sticky-top">
     
     <div class="d-flex align-items-center mr-2">        
         <div class="sidebar-toggler btn-animated" aria-expanded="false">
@@ -133,7 +137,7 @@
         </div>
         <div class="d-block d-sm-none">
             <a href="./">
-                <span class="menu-text"> <img src="https://s.gravatar.com/avatar/f81374f61682086b38bea505a9f7d5a0?s=32 " alt="..." class="rounded-circle"></span>
+                <img src="https://via.placeholder.com/24x24.png?text=D/B" alt="..." class="rounded mr-2">
             </a>   
         </div>        
     </div>
@@ -206,7 +210,7 @@
             <li class="nav-item">
                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="position-relative">
-                        <i class="far fa-fw fa-lg fa-bell"></i>
+                        <i class="far fa-fw fa-lg fa-envelope"></i>
                         <span class="badge badge-pill badge-danger">4</span>
                     </div>
                 </a>
