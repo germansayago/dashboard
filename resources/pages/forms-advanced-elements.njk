@@ -1,0 +1,176 @@
+{% extends "layouts.njk" %}
+
+{# Setting #}
+{% set title = 'Title' %}
+{% set breadcrumbItems =[ { name: 'Base' }, { name: title} ] %}
+{% set headerTitle = title %}
+{% set headerText = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.' %}
+
+{# Title #}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{# Content #}
+{% block content %}
+
+    {# breadcrumb #}
+    {{ breadcrumb.block(breadcrumbItems) }}
+
+    {# header #}
+    {{ header.block(headerTitle, headerText) }}
+
+    {# card columns custom #}
+    <section>
+        <div class="row">
+            <div class="col">
+
+                <div class="card">
+                    <div class="card-header">Input Html5</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="email" class="form-control" />
+                                    <small class="form-text text-muted">e.g "mail@domain.com"</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Url</label>
+                                    <input type="url" class="form-control" min="3" max="10" />
+                                    <small class="form-text text-muted">e.g "http://www.domain.com"</small>
+                                </div>                                
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="">Date</label>
+                                    <input type="date" class="form-control" />
+                                    <small class="form-text text-muted">e.g "00/00/0000"</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Search</label>
+                                    <input type="search" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="">Number</label>
+                                    <input type="number" class="form-control" min="3" max="10" />
+                                    <small class="form-text text-muted">e.g "0123456789"</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Date</label>
+                                    <input type="range" class="form-control" min="0" max="5" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="card">
+                    <div class="card-header">Input Masks</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+
+                                <div class="form-group">
+                                    <label for="">Date & Clear if not match</label>
+                                    <input type="text" id="date" class="form-control">
+                                    <small class="form-text text-muted">e.g "DD/MM/YYYY"</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Hour</label>
+                                    <input type="text" id="time" class="form-control">
+                                    <small class="form-text text-muted">e.g "00:00:00"</small>
+                                </div>      
+
+                                 <div class="form-group">
+                                    <label for="">Datetime</label>
+                                    <input type="text" class="form-control" name="field-name" data-mask="00/00/0000 00:00:00" />
+                                    <small class="form-text text-muted">e.g "0.00"</small>
+                                </div>                            
+
+                            </div>
+                            <div class="col-12 col-md-4">
+
+                                 <div class="form-group">
+                                    <label for="">Telephone</label>
+                                    <input type="text" id="phone" class="form-control">
+                                    <small class="form-text text-muted">e.g "4671 113"</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Telephone with code area</label>
+                                    <input type="text" id="phone_wca" class="form-control">
+                                    <small class="form-text text-muted">e.g "+54 9 358 6018 552"</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">DNI</label>
+                                    <input type="text" id="dni" class="form-control">
+                                    <small class="form-text text-muted">e.g "12.345.678"</small>
+                                </div>     
+                                
+                            </div>
+                            <div class="col-12 col-md-4">                               
+
+                                 <div class="form-group">
+                                    <label for="">Money</label>                                    
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">$</span>
+                                        </div>
+                                        <input type="text" id="money" class="form-control" aria-label="Money" aria-describedby="basic-addon1">
+                                    </div>
+                                    <small class="form-text text-muted">e.g "0,00"</small>
+                                </div>                                    
+                                
+                                <div class="form-group">
+                                    <label for="">Percent</label>
+                                    <div class="input-group">
+                                        <input type="text" id="percent" class="form-control" aria-label="Percent" aria-describedby="basic-addon2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon2">%</span>
+                                        </div>
+                                    </div>
+                                    <small class="form-text text-muted">e.g "0.00"</small>
+                                </div> 
+
+                                <div class="form-group">
+                                    <label for="">IP Address</label>
+                                    <input type="text" id="ip_address" class="form-control">
+                                    <small class="form-text text-muted">e.g "000.000.000.000"</small>
+                                </div>      
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>             
+    
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#date').mask('00/00/0000', {clearIfNotMatch: true});
+            $('#time').mask('00:00:00');
+            $('#phone').mask('0000 000');
+            $('#phone_wca').mask('+00 0 000 0000 000');
+            $('#money').mask('#.##0,00', {reverse: true});
+            $('#ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
+                translation: {
+                    'Z': {
+                        pattern: /[0-9]/, optional: true
+                    }
+                }
+            });
+            $('#percent').mask('##0,00', {reverse: true});         
+            $('#dni').mask('00.000.000');         
+        });
+    </script>
+{% endblock %}

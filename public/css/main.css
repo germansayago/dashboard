@@ -7149,7 +7149,8 @@ body {
 
 .navbar {
   border-bottom: 1px solid #ced4da;
-  width: 100%; }
+  width: 100%;
+  z-index: 9999; }
   .navbar .btn-animated {
     padding: 8px;
     border: none; }
@@ -7329,7 +7330,7 @@ button.toast-close-button {
   -webkit-appearance: none; }
 
 .toast-top-center {
-  top: 1rem;
+  top: 3rem;
   right: 0;
   width: 100%;
   padding-left: 15rem; }
@@ -7341,7 +7342,7 @@ button.toast-close-button {
   padding-left: 15rem; }
 
 .toast-top-full-width {
-  top: 1rem;
+  top: 3rem;
   right: 0;
   width: 100%;
   padding-left: 15rem; }
@@ -7353,11 +7354,11 @@ button.toast-close-button {
   padding-left: 15rem; }
 
 .toast-top-left {
-  top: 1rem;
+  top: 3rem;
   left: 16rem; }
 
 .toast-top-right {
-  top: 1rem;
+  top: 3rem;
   right: 1rem; }
 
 .toast-bottom-right {
@@ -7370,7 +7371,7 @@ button.toast-close-button {
 
 #toast-container {
   position: fixed;
-  z-index: 999999;
+  z-index: 999;
   pointer-events: none;
   /*overrides*/ }
   #toast-container * {
@@ -7428,7 +7429,7 @@ button.toast-close-button {
 
 .toast {
   position: absolute;
-  top: 0px;
+  top: 3rem;
   right: 0px;
   margin: 0px;
   width: 100%; }

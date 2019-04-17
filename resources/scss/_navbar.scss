@@ -1,6 +1,7 @@
 .navbar{
     border-bottom: 1px solid $gray-400;
     width: 100%;
+    z-index: 9999;
 
     .btn-animated{
         padding: 8px;

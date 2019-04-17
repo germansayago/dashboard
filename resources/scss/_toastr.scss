@@ -100,7 +100,7 @@ button.toast-close-button {
 //#endregion
 
 .toast-top-center {
-	top: $margin-y;
+	top: $margin-y * 3 ;
 	right: 0;
     width: 100%;
     padding-left: $sidebar-min-with;
@@ -114,7 +114,7 @@ button.toast-close-button {
 }
 
 .toast-top-full-width {
-	top: $margin-y;
+	top: $margin-y * 3;
 	right: 0;
     width: 100%;
     padding-left: $sidebar-min-with;
@@ -128,12 +128,12 @@ button.toast-close-button {
 }
 
 .toast-top-left {
-    top: $margin-y;
+    top: $margin-y * 3;
     left: $sidebar-min-with + $margin-x;
 }
 
 .toast-top-right {
-    top: $margin-y;
+    top: $margin-y * 3;
     right: $margin-x;
 }
 
@@ -149,8 +149,9 @@ button.toast-close-button {
 
 #toast-container {
 	position: fixed;
-    z-index: 999999;
+    z-index: 999;
 	// The container should not be clickable.
+	// background-color: #000;
 	pointer-events: none;
 	* {
 		-moz-box-sizing: border-box;
@@ -219,10 +220,10 @@ button.toast-close-button {
 
 .toast {
     position: absolute;
-    top: 0px;
+    top: $margin-y * 3;
     right: 0px;
     margin: 0px;
-    width: 100%;    
+    width: 100%;
 }
 
 .toast-success {
