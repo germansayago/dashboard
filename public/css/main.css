@@ -7134,12 +7134,16 @@ body {
 
 .notifications {
   position: absolute;
-  width: 300px;
   z-index: 99999;
+  padding: 0px;
+  top: 4rem;
   right: 1rem;
-  top: 1rem; }
+  background-color: rgba(0, 0, 255, 0.2);
+  height: 0px; }
   .notifications .toast {
-    position: relative; }
+    position: relative;
+    top: 0px;
+    margin-bottom: 1rem; }
 
 @media (min-width: 768px) {
   .wrapper.toggled .sidebar {
@@ -7330,19 +7334,17 @@ button.toast-close-button {
   -webkit-appearance: none; }
 
 .toast-top-center {
-  top: 3rem;
+  top: 4rem;
   right: 0;
-  width: 100%;
-  padding-left: 15rem; }
+  width: 100%; }
 
 .toast-bottom-center {
   bottom: 1rem;
   right: 0;
-  width: 100%;
-  padding-left: 15rem; }
+  width: 100%; }
 
 .toast-top-full-width {
-  top: 3rem;
+  top: 4rem;
   right: 0;
   width: 100%;
   padding-left: 15rem; }
@@ -7354,11 +7356,11 @@ button.toast-close-button {
   padding-left: 15rem; }
 
 .toast-top-left {
-  top: 3rem;
-  left: 16rem; }
+  top: 4rem;
+  left: 1rem; }
 
 .toast-top-right {
-  top: 3rem;
+  top: 4rem;
   right: 1rem; }
 
 .toast-bottom-right {
@@ -7367,11 +7369,11 @@ button.toast-close-button {
 
 .toast-bottom-left {
   bottom: 1rem;
-  left: 16rem; }
+  left: 1rem; }
 
 #toast-container {
   position: fixed;
-  z-index: 999;
+  z-index: 99999;
   pointer-events: none;
   /*overrides*/ }
   #toast-container * {
@@ -7426,13 +7428,6 @@ button.toast-close-button {
     width: 96% !important;
     margin-left: auto;
     margin-right: auto; }
-
-.toast {
-  position: absolute;
-  top: 3rem;
-  right: 0px;
-  margin: 0px;
-  width: 100%; }
 
 .toast-success {
   background-color: #51A351; }
@@ -7489,13 +7484,3 @@ button.toast-close-button {
     width: 25em; }
   #toast-container > div.rtl {
     padding: 15px 50px 15px 15px; } }
-
-@media (max-width: 767px) {
-  .toast-top-left {
-    left: 1rem; }
-  .toast-bottom-left {
-    left: 1rem; }
-  .toast-top-center {
-    padding-left: 0; }
-  .toast-bottom-center {
-    padding-left: 0; } }

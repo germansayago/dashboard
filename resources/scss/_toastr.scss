@@ -37,7 +37,9 @@ $default-container-opacity: .8;
 
 $sidebar-min-with: 15rem;
 $margin-x: 1rem;
-$margin-y: 1rem;
+$margin-y: 0px;
+$margin-top: 4rem;
+$margin-bottom: 1rem;
 
 
 // Styles
@@ -100,56 +102,54 @@ button.toast-close-button {
 //#endregion
 
 .toast-top-center {
-	top: $margin-y * 3 ;
+	top: $margin-top;
 	right: 0;
     width: 100%;
-    padding-left: $sidebar-min-with;
 }
 
 .toast-bottom-center {
-	bottom: $margin-y;
+	bottom: $margin-bottom;
 	right: 0;
     width: 100%;
-    padding-left: $sidebar-min-with;
 }
 
 .toast-top-full-width {
-	top: $margin-y * 3;
+	top: $margin-top;
 	right: 0;
     width: 100%;
     padding-left: $sidebar-min-with;
 }
 
 .toast-bottom-full-width {
-	bottom: $margin-y;
+	bottom: $margin-bottom;
 	right: 0;
     width: 100%;
     padding-left: $sidebar-min-with;
 }
 
 .toast-top-left {
-    top: $margin-y * 3;
-    left: $sidebar-min-with + $margin-x;
+    top: $margin-top;
+    left: $margin-x;
 }
 
 .toast-top-right {
-    top: $margin-y * 3;
+    top: $margin-top;
     right: $margin-x;
 }
 
 .toast-bottom-right {
     right: $margin-x;
-    bottom: $margin-y;
+    bottom: $margin-bottom;
 }
 
 .toast-bottom-left {
-    bottom: $margin-y;
-    left: $sidebar-min-with + $margin-x;
+    bottom: $margin-bottom;
+    left: $margin-x;
 }
 
 #toast-container {
 	position: fixed;
-    z-index: 999;
+    z-index: 99999;
 	// The container should not be clickable.
 	// background-color: #000;
 	pointer-events: none;
@@ -218,13 +218,13 @@ button.toast-close-button {
 	}
 }
 
-.toast {
-    position: absolute;
-    top: $margin-y * 3;
-    right: 0px;
-    margin: 0px;
-    width: 100%;
-}
+// .toast {
+// 	position: absolute;
+// 	top:0px;
+//     right: 0px;
+//     margin: 0px;
+//     width: 100%;
+// }
 
 .toast-success {
 	background-color: $green;
@@ -313,16 +313,16 @@ button.toast-close-button {
 }
 
 @media (max-width: 767px) {
-    .toast-top-left {
-        left: $margin-x;
-    }
-    .toast-bottom-left {
-        left: $margin-x;
-    }
-    .toast-top-center {
-        padding-left: 0;
-    }
-    .toast-bottom-center {
-        padding-left: 0;
-    }
+    // .toast-top-left {
+    //     left: $margin-x;
+    // }
+    // .toast-bottom-left {
+    //     left: $margin-x;
+    // }
+    // .toast-top-center {
+    //     padding-left: 0;
+    // }
+    // .toast-bottom-center {
+    //     padding-left: 0;
+    // }
 }
